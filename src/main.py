@@ -36,10 +36,10 @@ def iterate():
 
     if not username:
         username = 'World'
-    else:
-        # Split username into names if applicable,capitalize names, and convert
-        # list of names to string
-        username = " ".join(names.capitalize() for names in username.split())
+
+    # Split username into names if applicable,capitalize names, and convert
+    # list of names to string
+    username = " ".join(names.capitalize() for names in username.split())
 
     return render_template('index3.html', username=username, no_of_times=int(no_of_times))
 
