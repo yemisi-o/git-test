@@ -29,12 +29,17 @@ def iterate():
     username = request.args.get('username')
     no_of_times = request.args.get('no_of_times')
 
-    # Checks if no_of_times is empty, negative, or zero value, then defaults to 1
+    # Checks if no_of_times is empty, negative, or zero value, then defaults
+    # to 1
     if not no_of_times or no_of_times.isdigit() is False:
         no_of_times = 1
 
-    # Split username into names if applicable,capitalize names, and convert list of names to string
-    username = " ".join(names.capitalize() for names in username.split())
+    if not username:
+        username = 'World'
+    else:
+        # Split username into names if applicable,capitalize names, and convert
+        # list of names to string
+        username = " ".join(names.capitalize() for names in username.split())
 
     return render_template('index3.html', username=username, no_of_times=int(no_of_times))
 
