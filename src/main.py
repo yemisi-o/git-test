@@ -37,7 +37,7 @@ def iterate():
 
     username = '{} {}'.format(username.capitalize(), surname.capitalize())
 
-    if not username:
+    if not username or surname:
         username = 'World'
 
     return render_template('index3.html', username=username, no_of_times=int(no_of_times))
