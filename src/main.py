@@ -26,19 +26,17 @@ def profile():
 
 @app.route('/iterate')
 def iterate():
-    username = request.args.get('username') or " "
-    surname = request.args.get('surname') or " "
+    username = request.args.get('username', default="")
+    surname = request.args.get('surname', default="")
     no_of_times = request.args.get('no_of_times')
 
-    # Checks if no_of_times is empty, negative, or zero value, then defaults
-    # to 1
-    if not no_of_times or no_of_times.isdigit() is False:
-        no_of_times = 1
+    if not(username or surname):
+        username = 'World'
 
     username = '{} {}'.format(username.capitalize(), surname.capitalize())
 
-    if not username or surname:
-        username = 'World'
+    if not no_of_times or no_of_times.isdigit() is False:
+        no_of_times = 1
 
     return render_template('index3.html', username=username, no_of_times=int(no_of_times))
 
