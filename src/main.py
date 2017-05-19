@@ -14,7 +14,7 @@ def profile():
     surname = request.args.get('surname')
     # Condition to check for username and/or surname
     if username and surname:
-        username = username + ' ' + surname
+        username = '{} {}'.format(username, surname)
     elif username and not surname:
         username = username
     elif surname and not username:
@@ -26,7 +26,8 @@ def profile():
 
 @app.route('/iterate')
 def iterate():
-    username = request.args.get('username')
+    username = request.args.get('username') or " "
+    surname = request.args.get('surname') or " "
     no_of_times = request.args.get('no_of_times')
 
     # Checks if no_of_times is empty, negative, or zero value, then defaults
@@ -34,12 +35,10 @@ def iterate():
     if not no_of_times or no_of_times.isdigit() is False:
         no_of_times = 1
 
+    username = '{} {}'.format(username.capitalize(), surname.capitalize())
+
     if not username:
         username = 'World'
-
-    # Split username into names if applicable,capitalize names, and convert
-    # list of names to string
-    username = " ".join(names.capitalize() for names in username.split())
 
     return render_template('index3.html', username=username, no_of_times=int(no_of_times))
 
