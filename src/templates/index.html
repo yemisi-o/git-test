@@ -1,18 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hello World</title>
+    <title>Googl</title>
+    <link rel="stylesheet" type="" href="{{url_for("static", filename="style.css")}}">
 </head>
+
 <body>
-    <h1>
-    Hello {% if username %}
-    {{username}}
-    {% else %}
-    World
-    {% endif %}
-</h1>
+    <center>
+        <div style="height:233px;margin-top:89px" id="lga">
+            <div style="padding-top:109px">
+
+                <style>
+                    #hplogo {
+                        background: url(/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png) no-repeat
+                    }
+
+                    @media (-webkit-max-device-pixel-ratio:1),
+                    (max-resolution:96dpi) {
+                        #hplogo {
+                            background: url(/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png) no-repeat
+                        }
+                    }
+                </style>
+                <div style="background-size:272px 92px;height:92px;width:272px" title="Google" align="left" id="hplogo" onload="window.lol&amp;&amp;lol()">
+                    <img src="{{url_for("static", filename="Google.png")}}"/>
+               </div>   
+            </div>
+        </div>
+         <form class="tsf" action="/search" style="overflow:visible" id="tsf" method="GET" name="f" onsubmit="return q.value!=''"
+                    role="search" _lpchecked="1">
+                    <div data-jibp="" data-jiis="uc" id="tophf">
+                        <input name="site" value="" type="text" id="searchbox">
+                    </div>
+                </form>
+        <div style="height:118px"></div>
+        <div data-jibp="h" data-jiis="uc" id="prm-pt" style="margin-top:12px">
+            <style>
+                #als {
+                    font-size: small;
+                    margin-bottom: 24px
+                }
+
+                #_eEe {
+                    display: inline-block;
+                    line-height: 28px;
+                }
+
+                #_eEe a {
+                    padding: 0 3px;
+                }
+
+                ._lEe {
+                    display: inline-block;
+                    margin: 0 2px;
+                    white-space: nowrap
+                }
+
+                ._PEe {
+                    display: inline-block;
+                    margin: 0 2px
+                }
+            </style>
+            <script>
+                window.gbar && gbar.up && gbar.up.tp && gbar.up.tp();
+            </script>
+            <div id="als">
+                <div id="_eEe">Google.com.ng offered in: <a href="https://www.google.com.ng/setprefs?sig=0_Gaj30ynVg6rxjkr8YFO6V3Jcf18%3D&amp;hl=ha&amp;source=homepage"
+                        onmousedown="return rwt(this,'','','','','AFQjCNE0Y_1FU_wjxJHYVZTwEAuICr8xuA','RdH6mwZoxnI-LEZVuDlaMQ','0ahUKEwiL2I7okv7TAhXEtxQKHXN0CrUQ2ZgBCAw','','',event)">Hausa</a>                    <a href="https://www.google.com.ng/setprefs?sig=0_Gaj30ynVg6rxjkr8YFO6V3Jcf18%3D&amp;hl=ig&amp;source=homepage"
+                        onmousedown="return rwt(this,'','','','','AFQjCNEpB-HxyxislFSBkwDTDHf8fM4q9g','idlqX5BqXg1LwW33DLdHQQ','0ahUKEwiL2I7okv7TAhXEtxQKHXN0CrUQ2ZgBCA0','','',event)">Igbo</a>                    <a href="https://www.google.com.ng/setprefs?sig=0_Gaj30ynVg6rxjkr8YFO6V3Jcf18%3D&amp;hl=yo&amp;source=homepage"
+                        onmousedown="return rwt(this,'','','','','AFQjCNHS4tAjebpB5b_jClRf2gN6Ijm0RA','1GD9P04zSMbbZQI20UkT5A','0ahUKEwiL2I7okv7TAhXEtxQKHXN0CrUQ2ZgBCA4','','',event)">Èdè Yorùbá</a>                    <a href="https://www.google.com.ng/setprefs?sig=0_Gaj30ynVg6rxjkr8YFO6V3Jcf18%3D&amp;hl=pcm&amp;source=homepage"
+                        onmousedown="return rwt(this,'','','','','AFQjCNFv5ueuPtofRmjeyfGA7d_CRSOd7g','oGUR2f7Ykhe6piLMsdAd7Q','0ahUKEwiL2I7okv7TAhXEtxQKHXN0CrUQ2ZgBCA8','','',event)">Pidgin</a>                    </div>
+            </div>
+            <div id="swml"></div>
+        </div>
+    </center>
 </body>
+
 </html>
