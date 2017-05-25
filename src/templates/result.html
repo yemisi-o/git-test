@@ -1,30 +1,74 @@
-{% extends "index.html" %}
+{% extends "index.html" %} 
 {% block body %}
+
 {% if request.args.get("site") %}
-    <div>
-        <div class="result-list">
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+            <a class="navbar-brand" href="/">Googl</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" method="GET" name="f" onsubmit="return q.value!=''" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="site">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="col-md-12">
+
+        <div class="col-md-8">
+            <!--<div class="result-list">-->
             {% for data in results %}
-        <div class="g">
-            <!--m-->
-            <div data-hveid="32" data-ved="0ahUKEwi6zevKr_7TAhUJiSwKHblZAeUQFQggKAAwAA">
-                <div class="rc">
-                    <h3 class="r"><a href="{{ data.url }}"
-                            onmousedown="return rwt(this,'','','','1','AFQjCNFKiObWsstA_tSpH_tNsUK_VKY4EA','eFKaff1ZCmdBpLeG3og3Uw','0ahUKEwi6zevKr_7TAhUJiSwKHblZAeUQFgghMAA','','',event)"
-                            data-href="http://jinja.pocoo.org/">{{ data.title }}</a></h3>
-                    {{ data.summary | safe }}
+            <div class="">
+                <!--m-->
+                <div data-hveid="32" data-ved="0ahUKEwi6zevKr_7TAhUJiSwKHblZAeUQFQggKAAwAA">
+                    <div class="rc">
+                        <h3 class="r"><a href="{{ data.url }}" onmousedown="return rwt(this,'','','','1','AFQjCNFKiObWsstA_tSpH_tNsUK_VKY4EA','eFKaff1ZCmdBpLeG3og3Uw','0ahUKEwi6zevKr_7TAhUJiSwKHblZAeUQFgghMAA','','',event)"
+                                data-href="http://jinja.pocoo.org/">{{ data.title }}</a></h3>
+                        <p>{{ data.summary | safe }}</p>
+                    </div>
                 </div>
             </div>
+            {% endfor %}
+            <!--</div>-->
         </div>
-        {% endfor %}
+        <div class="col-md-4">
+            <div class="page-header">
+                <h1>You searched for {{ title }}</h1>
+            </div>
         </div>
-        <div  class="search-term"><h1>You searched for {{ title }}</h1></div>
     </div>
-{% else %}
-    <div class="warning">
-        <h2> You did not enter any search term</h2>
-    </div> 
-    <div>
-        {{ super() }}
-    </div> 
-{% endif %}
-{% endblock %}
+    {% else %}
+    <div class="col-md-12">
+        <div class="alert alert-danger" role="alert">
+            <p style="text-align: center"> You did not enter any search term. Use the searchbox below to perform a search</p>
+        </div>
+        <div>
+            {{ super() }}
+        </div>
+    </div>
+</div>
+{% endif %} {% endblock %}

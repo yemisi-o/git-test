@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Googl</title>
+    <link type="text/css" rel="stylesheet" href="{{url_for("static", filename="css/bootstrap.min.css")}}">
+    <link type="text/css" rel="stylesheet" href="{{url_for("static", filename="css/bootstrap-theme.min.css")}}">
     <link rel="stylesheet" type="" href="{{url_for("static", filename="style.css")}}">
 </head>
 
@@ -80,6 +82,8 @@
         </div>
     </center>
     {% endblock %}
+    <script src="{{url_for("static", filename="js/jquery-3.2.1.min.js")}}"></script>
+    <script src="{{url_for("static", filename="js/bootstrap.min.js")}}"></script>
 </body>
 
 </html>
